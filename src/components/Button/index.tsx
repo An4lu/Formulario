@@ -1,20 +1,7 @@
-import React from 'react'
+import { StyledButton } from './styles'
 
-import { Container } from './styles'
-
-interface ButtonProps {
-  backgroundColor: string
-  hoverColor: string
+function Button() {
+  return <StyledButton></StyledButton>
 }
-
-const Button: React.FC<ButtonProps> = ({
-  backgroundColor,
-  hoverColor,
-  children,
-}) => (
-  <Container backgroundColor={backgroundColor} hoverColor={hoverColor}>
-    {children}
-  </Container>
-)
 
 export default Button

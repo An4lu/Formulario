@@ -1,23 +1,19 @@
-import styled from 'styled-components'
+import { styled } from '../../styles'
 
-interface ContainerProps {
-  backgroundColor: string
-  hoverColor: string
-}
-
-export const Container = styled.button<ContainerProps>`
-  width: 80px;
-  height: 30px;
-  border-style: none;
-  border-radius: 3px;
-  color: white;
-  font-weight: bold;
-  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
-    rgba(17, 17, 26, 0.1) 0px 0px 8px;
-
-  background-color: ${(props) => props.backgroundColor};
-
-  &:hover {
-    background-color: ${(props) => props.hoverColor};
-  }
-`
+export const StyledButton = styled('button', {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  padding: '6px 14px',
+  backgroundColor: '$yellow',
+  color: '$white',
+  fontWeight: '500',
+  fontSize: '14px',
+  border: 'none',
+  borderRadius: '4px',
+  gap: '10px',
+  boxShadow: '8px 1px 8px $grey100, rgba(17,17,26, 0.1) 0px 0px 0px',
+  '&:hover': {
+    backgroundColor: '#D6AC4A',
+  },
+})

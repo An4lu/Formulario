@@ -7,9 +7,13 @@ export const globalStyles = globalCss({
     boxSizing: 'border-box',
   },
   'body, input, textarea, button, select': {
-    fontFamily: 'Inter, sans-serif',
+    fontFamily: 'Inter',
   },
   body: {
     backgroundColor: '$white',
+  },
+  img: {
+    display: 'block',
+    maxWidth: '100%',
   },
 })
