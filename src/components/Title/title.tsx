@@ -1,11 +1,9 @@
-import React from 'react'
+import React from "react";
 
 interface TitleProps {
-  text: string
+  text: string;
 }
 
-const Title: React.FC<TitleProps> = ({ text }) => {
-  return <h1>{text}</h1>
-}
-
-export default Title
+export const Title: React.FC<TitleProps> = ({ text }) => {
+  return <h1>{text}</h1>;
+};

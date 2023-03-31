@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import { styled } from "../../styles";
 
-export const epa = styled.title`
-  font-weight: bold;
-  font-width: 100% !important;
-  font-family: 'Inter';
-`
+export const Title = styled("h1", {
+  color: "$gray500",
+  fontSize: "36px",
+  fontWeight: "lighter",
+});
