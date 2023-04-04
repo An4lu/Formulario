@@ -1,14 +1,18 @@
-import { MultiSelect } from "./components/MultiSelect";
-import { Sidebar } from "./components/Sidebar";
-import { globalStyles } from "./styles/global";
+import { globalStyles } from './styles/global'
+import { Sheets } from './pages/Sheets'
+import { Sidebar } from './components/Sidebar'
+globalStyles()
 
 export function App() {
-  globalStyles();
   return (
-    <div>
+    <div
+      style={{
+        display: 'flex',
+        gap: '1rem',
+      }}
+    >
       <Sidebar />
-      {/* <h1>Oidkbnfkhsbfgjhsdfbgjhsdbfgjhsdbfg</h1>
-      <MultiSelect options={[{ label: "Chuva", value: "Água" }]} /> */}
+      <Sheets />
     </div>
-  );
+  )
 }

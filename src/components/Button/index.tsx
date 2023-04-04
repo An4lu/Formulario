@@ -1,7 +1,12 @@
+import { ReactNode } from 'react'
 import { StyledButton } from './styles'
+import { CSS } from '@stitches/react'
 
-function Button() {
-  return <StyledButton></StyledButton>
+interface ButtonProps {
+  children: ReactNode
+  css?: CSS
 }
 
-export default Button
+export const Button = ({ children, css }: ButtonProps) => (
+  <StyledButton css={css}>{children}</StyledButton>
+)
