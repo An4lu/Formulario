@@ -12,7 +12,11 @@ export const colorStyles: StylesConfig<ColourOption, true> = {
     ...styles,
     backgroundColor: 'white',
     borderRadius: '4px',
-    margin: '0.875rem',
+    borderStyle: 'none',
+    height: '2.875rem',
+    width: '56.25rem',
+    marginTop: '14px',
+    boxShadow: '0px 0px 4px rgba(0, 0, 0, 0.25)',
   }),
   multiValue: (styles) => {
     return {
@@ -31,5 +35,6 @@ export const colorStyles: StylesConfig<ColourOption, true> = {
   multiValueLabel: (styles) => ({
     ...styles,
     color: 'white',
+    fontFamily: 'Inter',
   }),
 }

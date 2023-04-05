@@ -5,7 +5,7 @@ export const StyledButton = styled('button', {
   justifyContent: 'center',
   alignItems: 'center',
   padding: '6px 14px',
-  backgroundColor: '$yellow',
+  backgroundColor: '$yellow100',
   color: '$white',
   fontWeight: '500',
   fontSize: '14px',
@@ -14,6 +14,6 @@ export const StyledButton = styled('button', {
   gap: '10px',
   boxShadow: '8px 1px 8px $grey100, rgba(17,17,26, 0.1) 0px 0px 0px',
   '&:hover': {
-    backgroundColor: '#$yellow100',
+    backgroundColor: '$yellow600',
   },
 })

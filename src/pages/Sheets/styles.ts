@@ -25,6 +25,7 @@ export const FormContainer = styled('form', {
 
 export const LineFormItem = styled('div', {
   display: 'flex',
+  justifyContent: 'space-between',
   gap: '70px',
   marginTop: '40px',
   marginBottom: '40px',
@@ -48,14 +49,17 @@ export const CheckboxItem = styled('div', {
   flexDirection: 'row',
 })
 
+export const LineMultiSelect = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+})
+
 export const SelectItem = styled('select', {
   width: '484px',
   height: '46px',
   borderStyle: 'none',
   borderRadius: '4px',
-  // boxShadow: '0px 0px 4px, rgba(0, 0, 0, 0.25) 0 0',
-  boxShadow:
-    'rgba(0, 0, 0, 0.05) 0px 4px 15px 0px, rgba(0, 0, 0, 0.025) 0px 0px 0px 2px',
+  boxShadow: '0px 0px 4px rgba(0, 0, 0, 0.25)',
 })
 
 export const LineTextArea = styled('div', {

@@ -1,4 +1,6 @@
+import { Button } from '../../components/Button'
 import { CheckBox } from '../../components/Checkbox'
+import { MultiSelect } from '../../components/MultiSelect'
 import { SubTitle } from '../../components/SubTitle'
 import MyTextarea from '../../components/TextArea'
 import { Heading } from '../../components/Title'
@@ -11,9 +13,29 @@ import {
   ItemFormContainer,
   LabelText,
   LineFormItem,
+  LineMultiSelect,
   LineTextArea,
   SelectItem,
 } from './styles'
+
+const options = [
+  {
+    value: 'agua',
+    label: 'agua',
+  },
+  {
+    value: 'terra',
+    label: 'terra',
+  },
+  {
+    value: 'fogo',
+    label: 'fogo',
+  },
+  {
+    value: 'ar',
+    label: 'ar',
+  },
+]
 
 export const Sheets = () => {
   return (
@@ -61,8 +83,10 @@ export const Sheets = () => {
           </CheckboxContainer>
         </LineFormItem>
         <LineFormItem>
-          <LabelText>RESERVAS CONSIDERADAS</LabelText>
-          {/* <MultiSelect options={[]} /> */}
+          <LineMultiSelect>
+            <LabelText>RESERVAS CONSIDERADAS</LabelText>
+            <MultiSelect options={options} />
+          </LineMultiSelect>
         </LineFormItem>
         <LineFormItem>
           <CheckboxContainer>
@@ -78,6 +102,9 @@ export const Sheets = () => {
             <LabelText>MÊS DE PROJEÇÃO</LabelText>
             <MyTextarea></MyTextarea>
           </LineTextArea>
+        </LineFormItem>
+        <LineFormItem>
+          <Button css={{ alignSelf: 'end' }}>Executar</Button>
         </LineFormItem>
       </FormContainer>
     </Container>
