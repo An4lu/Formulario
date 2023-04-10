@@ -22,6 +22,7 @@ export const {
       gray250: '#555555',
       gray300: '#9F9999',
       gray400: '#797777',
+      gray450: '#4E4E4E',
       gray500: '#2B2B2B',
       white: '#FFFFFF',
     },

@@ -1,25 +1,15 @@
-import React from 'react'
-import { Selects, Option } from './styles'
+import Select from 'react-select/creatable'
+import { colorStyles } from './styles'
 
-interface SelectProps {
-  options: string[]
-  selectedIndex: number
-  onSelectIndex: (index: number) => void
-}
-
-export function Select({ options, selectedIndex, onSelectIndex }: SelectProps) {
-  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const index = parseInt(event.target.value)
-    onSelectIndex(index)
-  }
+export function mySelect() {
+  const selectOptions = [
+    { label: 'Arquivos Disponiveis', value: 'Arquivos Disponiveis' },
+    { label: 'Localidades faltando', value: 'Localidades faltando' },
+    { label: 'Materiais faltando', value: 'Materiais faltando' },
+    { label: 'DOHs faltando', value: 'DOHs faltando' },
+  ]
 
   return (
-    <Selects value={selectedIndex} onChange={handleSelectChange}>
-      {options.map((option, index) => (
-        <Option key={index} value={index}>
-          {option}
-        </Option>
-      ))}
-    </Selects>
+    <Select options={selectOptions} isClearable styles={colorStyles}></Select>
   )
 }

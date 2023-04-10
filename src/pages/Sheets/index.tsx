@@ -4,6 +4,7 @@ import { MultiSelect } from '../../components/MultiSelect'
 import { SubTitle } from '../../components/SubTitle'
 import MyTextarea from '../../components/TextArea'
 import { Heading } from '../../components/Title'
+import { PlayCircle } from '@phosphor-icons/react'
 import {
   CheckboxContainer,
   CheckboxItem,
@@ -103,9 +104,10 @@ export const Sheets = () => {
             <MyTextarea></MyTextarea>
           </LineTextArea>
         </LineFormItem>
-        <LineFormItem>
-          <Button css={{ alignSelf: 'end' }}>Executar</Button>
-        </LineFormItem>
+        <Button css={{ alignSelf: 'end' }}>
+          <PlayCircle size={22} weight="bold" />
+          Executar
+        </Button>
       </FormContainer>
     </Container>
   )

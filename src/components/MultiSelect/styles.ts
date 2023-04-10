@@ -14,7 +14,7 @@ export const colorStyles: StylesConfig<ColourOption, true> = {
     borderRadius: '4px',
     borderStyle: 'none',
     height: '2.875rem',
-    width: '56.25rem',
+    width: '100%',
     marginTop: '14px',
     boxShadow: '0px 0px 4px rgba(0, 0, 0, 0.25)',
   }),
@@ -28,7 +28,7 @@ export const colorStyles: StylesConfig<ColourOption, true> = {
     ...styles,
     color: 'white',
     ':hover': {
-      backgroundColor: '#EF4444',
+      backgroundColor: '$yellow100',
       color: 'black',
     },
   }),

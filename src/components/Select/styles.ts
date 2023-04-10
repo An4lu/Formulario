@@ -1,24 +1,13 @@
-import { styled } from '@stitches/react'
+import { StylesConfig } from 'react-select'
 
-export const Selects = styled('select', {
-  backgroundColor: '#F5F5F5',
-  borderRadius: '8px',
-  border: 'none',
-  padding: '12px 16px',
-  fontSize: '16px',
-  color: '#333',
-  appearance: 'none',
-  '&:focus': {
-    outline: 'none',
-    boxShadow: '0 0 0 2px #4B89FF',
-  },
-})
-
-export const Option = styled('option', {
-  backgroundColor: '#F5F5F5',
-  borderRadius: '8px',
-  border: 'none',
-  padding: '12px 16px',
-  fontSize: '16px',
-  color: '#333',
-})
+export const colorStyles: StylesConfig<Option> = {
+  control: (styles) => ({
+    ...styles,
+    backgroundColor: 'white',
+    width: '484px',
+    height: '46px',
+    borderRadius: '4px',
+    borderStyle: 'none',
+    boxShadow: '0px 0px 4px rgba(0, 0, 0, 0.25)',
+  }),
+}

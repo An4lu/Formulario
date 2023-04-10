@@ -1,8 +1,8 @@
 import { styled } from '../../styles'
 
 export const Container = styled('div', {
-  maxWidth: '1009px',
-  width: '100%',
+  maxWidth: '1000px',
+  width: '90%',
   margin: '0 auto',
   marginTop: '42px',
 })
@@ -20,7 +20,8 @@ export const Header = styled('div', {
 })
 
 export const FormContainer = styled('form', {
-  marginTop: '40px',
+  display: 'flex',
+  flexDirection: 'column',
 })
 
 export const LineFormItem = styled('div', {
@@ -28,7 +29,7 @@ export const LineFormItem = styled('div', {
   justifyContent: 'space-between',
   gap: '70px',
   marginTop: '40px',
-  marginBottom: '40px',
+  width: '100%',
 })
 
 export const ItemFormContainer = styled('div', {
@@ -47,11 +48,13 @@ export const CheckboxContainer = styled('div', {
 export const CheckboxItem = styled('div', {
   display: 'flex',
   flexDirection: 'row',
+  marginTop: '14px',
 })
 
 export const LineMultiSelect = styled('div', {
   display: 'flex',
   flexDirection: 'column',
+  width: '100%',
 })
 
 export const SelectItem = styled('select', {
@@ -65,4 +68,5 @@ export const SelectItem = styled('select', {
 export const LineTextArea = styled('div', {
   display: 'flex',
   flexDirection: 'column',
+  width: '100%',
 })
