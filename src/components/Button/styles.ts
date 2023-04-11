@@ -16,6 +16,7 @@ export const StyledButton = styled('button', {
   border: 'none',
   borderRadius: '4px',
   gap: '10px',
+  cursor: 'pointer',
   boxShadow: '8px 1px 8px $grey100, rgba(17,17,26, 0.1) 0px 0px 0px',
 
   '&:hover': {

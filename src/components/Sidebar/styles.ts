@@ -4,10 +4,11 @@ export const ContainerSidebar = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   gap: '30px',
-  height: '100vh',
+  height: '100%',
   backgroundColor: '$blue500',
   color: '$white',
-  position: 'sticky',
+  position: 'fixed',
+  zIndex: '100',
   top: '0',
   left: '0',
 

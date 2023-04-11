@@ -13,6 +13,7 @@ export const CheckboxRoot = styled(Checkbox.Root, {
   justifyContent: 'center',
   border: '1px solid #979797',
   outline: 'none',
+  cursor: 'pointer',
   '&[data-state="checked"]': {
     backgroundColor: '$yellow600',
     border: 'none',

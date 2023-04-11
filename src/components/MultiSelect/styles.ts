@@ -17,6 +17,7 @@ export const colorStyles: StylesConfig<ColourOption, true> = {
     width: '100%',
     marginTop: '14px',
     boxShadow: '0px 0px 4px rgba(0, 0, 0, 0.25)',
+    cursor: 'pointer',
   }),
   multiValue: (styles) => {
     return {
@@ -28,13 +29,22 @@ export const colorStyles: StylesConfig<ColourOption, true> = {
     ...styles,
     color: 'white',
     ':hover': {
-      backgroundColor: '$yellow100',
-      color: 'black',
+      backgroundColor: '#EF4444',
+      color: 'white',
     },
   }),
   multiValueLabel: (styles) => ({
     ...styles,
     color: 'white',
     fontFamily: 'Inter',
+  }),
+  option: (styles, { isFocused, isSelected }) => ({
+    ...styles,
+    backgroundColor: isFocused ? '#D3AB3C' : 'transparent',
+    ':hover': {
+      backgroundColor: '#D3AB3C',
+      color: 'white',
+    },
+    color: isSelected ? 'white' : '#111827',
   }),
 }

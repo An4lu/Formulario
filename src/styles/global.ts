@@ -2,7 +2,7 @@ import { globalCss } from '.'
 
 export const globalStyles = globalCss({
   '*': {
-    margin: '0rem',
+    margin: '0px',
     padding: '0rem',
     boxSizing: 'border-box',
   },

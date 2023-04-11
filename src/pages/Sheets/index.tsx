@@ -1,9 +1,10 @@
 import { Button } from '../../components/Button'
 import { CheckBox } from '../../components/Checkbox'
 import { MultiSelect } from '../../components/MultiSelect'
-import { SubTitle } from '../../components/SubTitle'
+import { mySelect } from '../../components/Select'
 import MyTextarea from '../../components/TextArea'
 import { Heading } from '../../components/Title'
+import { SubTitle } from '../../components/SubTitle'
 import { PlayCircle } from '@phosphor-icons/react'
 import {
   CheckboxContainer,
@@ -20,22 +21,8 @@ import {
 } from './styles'
 
 const options = [
-  {
-    value: 'agua',
-    label: 'agua',
-  },
-  {
-    value: 'terra',
-    label: 'terra',
-  },
-  {
-    value: 'fogo',
-    label: 'fogo',
-  },
-  {
-    value: 'ar',
-    label: 'ar',
-  },
+  { label: 'D2C', value: 'D2C' },
+  { label: 'BF', value: 'BF' },
 ]
 
 export const Sheets = () => {
@@ -52,26 +39,17 @@ export const Sheets = () => {
         <LineFormItem>
           <ItemFormContainer>
             <LabelText htmlFor="select">MÊS DE PROJEÇÃO</LabelText>
-            <SelectItem id="select">
-              <option>M1</option>
-              <option>M1</option>
-            </SelectItem>
+            <SelectItem id="select">{mySelect()}</SelectItem>
           </ItemFormContainer>
           <ItemFormContainer>
             <LabelText htmlFor="select1">MÊS DE PROJEÇÃO</LabelText>
-            <SelectItem id="select1">
-              <option>GMR M+1 | Plano Tático M+1</option>
-              <option>M1</option>
-            </SelectItem>
+            <SelectItem id="select1">{mySelect()}</SelectItem>
           </ItemFormContainer>
         </LineFormItem>
         <LineFormItem>
           <ItemFormContainer>
             <LabelText htmlFor="select2">DIARIZAÇÃO</LabelText>
-            <SelectItem id="select2">
-              <option>OTL</option>
-              <option>OTL</option>
-            </SelectItem>
+            <SelectItem id="select2">{mySelect()}</SelectItem>
           </ItemFormContainer>
         </LineFormItem>
         <LineFormItem>
