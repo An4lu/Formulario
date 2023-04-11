@@ -42,7 +42,7 @@ export const Sheets = () => {
             <SelectItem id="select">{mySelect()}</SelectItem>
           </ItemFormContainer>
           <ItemFormContainer>
-            <LabelText htmlFor="select1">MÊS DE PROJEÇÃO</LabelText>
+            <LabelText htmlFor="select1">TARGET PARA RESERVA</LabelText>
             <SelectItem id="select1">{mySelect()}</SelectItem>
           </ItemFormContainer>
         </LineFormItem>
