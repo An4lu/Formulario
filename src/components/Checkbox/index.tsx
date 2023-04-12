@@ -1,4 +1,4 @@
-import { CheckboxIndicator, CheckboxRoot, Flex, Label } from './styles'
+import { CheckboxIndicator, CheckboxRoot, Flex } from './styles'
 import { ReactNode } from 'react'
 import { Check } from '@phosphor-icons/react'
 

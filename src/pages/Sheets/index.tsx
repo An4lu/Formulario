@@ -60,10 +60,8 @@ export const Sheets = () => {
               <CheckBox>
                 <CheckText>Reservas Consideradas Full</CheckText>
               </CheckBox>
-              <CheckBox> 
-                <CheckText>
-                  Gds BF Oferta Disponibilidade
-                </CheckText>
+              <CheckBox>
+                <CheckText>Gds BF Oferta Disponibilidade</CheckText>
               </CheckBox>
             </CheckboxItem>
           </CheckboxContainer>
@@ -78,15 +76,11 @@ export const Sheets = () => {
           <CheckboxContainer>
             <LabelText>PROJEÇÕES EXTRAS</LabelText>
             <CheckboxItem>
-            <CheckBox> 
-                <CheckText>
-                  Projetar abastecimento BF
-                </CheckText>
+              <CheckBox>
+                <CheckText>Projetar abastecimento BF</CheckText>
               </CheckBox>
-              <CheckBox> 
-                <CheckText>
-                  Projetar abastecimento BF
-                </CheckText>
+              <CheckBox>
+                <CheckText>Projetar abastecimento BF</CheckText>
               </CheckBox>
             </CheckboxItem>
           </CheckboxContainer>
