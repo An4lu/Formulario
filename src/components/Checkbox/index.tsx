@@ -1,17 +1,19 @@
-import { CheckboxIndicator, CheckboxRoot } from './styles'
+import { CheckboxIndicator, CheckboxRoot, Flex, Label } from './styles'
+import { ReactNode } from 'react'
 import { Check } from '@phosphor-icons/react'
 
 interface LabelProps {
-  id: string
-  onValueChange: (value: boolean) => void
+  children: ReactNode
 }
-
-export const CheckBox = ({ id, onValueChange }: LabelProps) => {
+export const CheckBox = ({ children }: LabelProps) => {
   return (
-    <CheckboxRoot id={id} onCheckedChange={onValueChange}>
-      <CheckboxIndicator>
-        <Check size={12} color="#ffffff" />
-      </CheckboxIndicator>
-    </CheckboxRoot>
+    <Flex>
+      <CheckboxRoot defaultChecked>
+        <CheckboxIndicator>
+          <Check size={12} color="#ffffff" />
+        </CheckboxIndicator>
+      </CheckboxRoot>
+      {children}
+    </Flex>
   )
 }

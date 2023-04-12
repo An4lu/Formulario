@@ -7,6 +7,7 @@ import { Heading } from '../../components/Title'
 import { SubTitle } from '../../components/SubTitle'
 import { PlayCircle } from '@phosphor-icons/react'
 import {
+  CheckText,
   CheckboxContainer,
   CheckboxItem,
   Container,
@@ -54,10 +55,16 @@ export const Sheets = () => {
         </LineFormItem>
         <LineFormItem>
           <CheckboxContainer>
-            <LabelText htmlFor="c1">RESERVA PRÉ DEFINIDA</LabelText>
+            <LabelText>RESERVA PRÉ DEFINIDA</LabelText>
             <CheckboxItem>
-              <CheckBox id="c1">Reservas Consideradas Full</CheckBox>
-              <CheckBox>Gds BF Oferta Disponibilidade</CheckBox>
+              <CheckBox>
+                <CheckText>Reservas Consideradas Full</CheckText>
+              </CheckBox>
+              <CheckBox> 
+                <CheckText>
+                  Gds BF Oferta Disponibilidade
+                </CheckText>
+              </CheckBox>
             </CheckboxItem>
           </CheckboxContainer>
         </LineFormItem>
@@ -71,8 +78,16 @@ export const Sheets = () => {
           <CheckboxContainer>
             <LabelText>PROJEÇÕES EXTRAS</LabelText>
             <CheckboxItem>
-              <CheckBox>Projetar abastecimento BF</CheckBox>
-              <CheckBox>Projetar abastecimento BF</CheckBox>
+            <CheckBox> 
+                <CheckText>
+                  Projetar abastecimento BF
+                </CheckText>
+              </CheckBox>
+              <CheckBox> 
+                <CheckText>
+                  Projetar abastecimento BF
+                </CheckText>
+              </CheckBox>
             </CheckboxItem>
           </CheckboxContainer>
         </LineFormItem>

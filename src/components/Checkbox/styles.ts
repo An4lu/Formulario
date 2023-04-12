@@ -10,8 +10,6 @@ export const CheckboxRoot = styled(Checkbox.Root, {
   alignItems: 'center',
   borderRadius: 2,
   border: '1px solid #979797',
-  boxShadow: `0 2px 10px gray500`,
-  borderColor: '$gray250',
   display: 'flex',
   outline: 'none',
   cursor: 'pointer',
@@ -24,3 +22,4 @@ export const CheckboxRoot = styled(Checkbox.Root, {
 export const CheckboxIndicator = styled(Checkbox.Indicator, {
   color: '$white',
 })
+export const Flex = styled('div', { display: 'flex', marginRight: '70px' })

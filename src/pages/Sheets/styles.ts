@@ -50,6 +50,15 @@ export const CheckboxItem = styled('div', {
   marginTop: '14px',
 })
 
+export const CheckText = styled('label', {
+  color: '$gray500',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginLeft: '13px',
+  fontSize: 14,
+})
+
 export const LineMultiSelect = styled('div', {
   display: 'flex',
   flexDirection: 'column',
