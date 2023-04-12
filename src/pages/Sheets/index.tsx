@@ -54,9 +54,9 @@ export const Sheets = () => {
         </LineFormItem>
         <LineFormItem>
           <CheckboxContainer>
-            <LabelText htmlFor="checkbox2">RESERVA PRÉ DEFINIDA</LabelText>
+            <LabelText htmlFor="c1">RESERVA PRÉ DEFINIDA</LabelText>
             <CheckboxItem>
-              <CheckBox>Reservas Consideradas Full</CheckBox>
+              <CheckBox id="c1">Reservas Consideradas Full</CheckBox>
               <CheckBox>Gds BF Oferta Disponibilidade</CheckBox>
             </CheckboxItem>
           </CheckboxContainer>

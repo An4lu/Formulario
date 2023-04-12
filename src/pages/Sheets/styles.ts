@@ -1,7 +1,7 @@
 import { styled } from '../../styles'
 
 export const Container = styled('div', {
-  maxWidth: '980px',
+  maxWidth: '1000px',
   width: '100%',
   margin: '0 auto',
   marginTop: '42px',
