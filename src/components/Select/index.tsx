@@ -1,7 +1,12 @@
-import Select from 'react-select/creatable'
+import ReactSelect from 'react-select/creatable'
 import { colorStyles } from './styles'
 
-export function mySelect() {
+interface SelectProps {
+  onValueChange: (value: string) => void
+  id: string
+}
+
+export function Select(props: SelectProps) {
   const selectOptions = [
     { label: 'M1', value: 'M1' },
     { label: 'OTL', value: 'OTL' },
@@ -11,12 +16,18 @@ export function mySelect() {
     },
   ]
 
+  function handleChange(dados) {
+    props.onValueChange(dados.value)
+  }
+
   return (
-    <Select
+    <ReactSelect
+      onChange={handleChange}
       options={selectOptions}
       isClearable
       styles={colorStyles}
       placeholder="Selecione"
-    ></Select>
+      id={props.id}
+    ></ReactSelect>
   )
 }

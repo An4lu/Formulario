@@ -1,7 +1,7 @@
 import { Button } from '../../components/Button'
 import { CheckBox } from '../../components/Checkbox'
 import { MultiSelect } from '../../components/MultiSelect'
-import { mySelect } from '../../components/Select'
+import { Select } from '../../components/Select'
 import MyTextarea from '../../components/TextArea'
 import { Heading } from '../../components/Title'
 import { SubTitle } from '../../components/SubTitle'
@@ -31,13 +31,14 @@ const options = [
 export const Sheets = () => {
   const {
     handleSubmit,
-    formState: { errors },
+    // formState: { errors },
     control,
   } = useForm({
     defaultValues: {
       monthSelect: '',
       projectionmonth: '',
       target: '',
+      diarization: '',
       reservations: [],
       fullreservations: false,
       disponibility: false,
@@ -46,7 +47,7 @@ export const Sheets = () => {
     },
   })
 
-  const getValues = (data) => {
+  const getValues = (data: any) => {
     console.log(data)
   }
 
@@ -63,17 +64,41 @@ export const Sheets = () => {
         <LineFormItem>
           <ItemFormContainer>
             <LabelText htmlFor="select">MÊS DE PROJEÇÃO</LabelText>
-            <SelectItem id="select">{mySelect()}</SelectItem>
+            <SelectItem>
+              <Controller
+                name="monthSelect"
+                control={control}
+                render={({ field }) => (
+                  <Select onValueChange={field.onChange} id="select" />
+                )}
+              />
+            </SelectItem>
           </ItemFormContainer>
           <ItemFormContainer>
             <LabelText htmlFor="select1">TARGET PARA RESERVA</LabelText>
-            <SelectItem id="select1">{mySelect()}</SelectItem>
+            <SelectItem id="select1">
+              <Controller
+                name="target"
+                control={control}
+                render={({ field }) => (
+                  <Select onValueChange={field.onChange} id="select1" />
+                )}
+              />
+            </SelectItem>
           </ItemFormContainer>
         </LineFormItem>
         <LineFormItem>
           <ItemFormContainer>
             <LabelText htmlFor="select2">DIARIZAÇÃO</LabelText>
-            <SelectItem id="select2">{mySelect()}</SelectItem>
+            <SelectItem id="select2">
+              <Controller
+                name="diarization"
+                control={control}
+                render={({ field }) => (
+                  <Select onValueChange={field.onChange} id="select2" />
+                )}
+              />
+            </SelectItem>
           </ItemFormContainer>
         </LineFormItem>
         <LineFormItem>

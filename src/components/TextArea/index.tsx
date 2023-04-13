@@ -10,13 +10,7 @@ const MyTextarea = (props: MyTextareaProps) => {
     props.onValueChange(value)
   }
 
-  return (
-    <TextArea
-      {...props}
-      rows={7}
-      onChange={(e) => handleChange(e.target.value)}
-    />
-  )
+  return <TextArea rows={7} onChange={(e) => handleChange(e.target.value)} />
 }
 
 export default MyTextarea
