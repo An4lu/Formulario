@@ -14,12 +14,14 @@ import {
   FormContainer,
   Header,
   ItemFormContainer,
+  LineCheckItem,
   LabelText,
   LineFormItem,
   LineMultiSelect,
   LineTextArea,
   SelectItem,
 } from './styles'
+import { Controller, useForm } from 'react-hook-form'
 
 const options = [
   { label: 'D2C', value: 'D2C' },
@@ -27,6 +29,26 @@ const options = [
 ]
 
 export const Sheets = () => {
+  const {
+    handleSubmit,
+    formState: { errors },
+    control,
+  } = useForm({
+    defaultValues: {
+      projectionmonth: '',
+      target: '',
+      reservations: [],
+      fullreservations: false,
+      disponibility: false,
+      supply1: false,
+      supply2: false,
+    },
+  })
+
+  const getValues = (data) => {
+    console.log(data)
+  }
+
   return (
     <Container>
       <Header>
@@ -36,7 +58,7 @@ export const Sheets = () => {
         </SubTitle>
       </Header>
 
-      <FormContainer>
+      <FormContainer onSubmit={handleSubmit(getValues)}>
         <LineFormItem>
           <ItemFormContainer>
             <LabelText htmlFor="select">MÊS DE PROJEÇÃO</LabelText>
@@ -56,39 +78,85 @@ export const Sheets = () => {
         <LineFormItem>
           <CheckboxContainer>
             <LabelText>RESERVA PRÉ DEFINIDA</LabelText>
-            <CheckboxItem>
-              <CheckBox>
-                <CheckText>Reservas Consideradas Full</CheckText>
-              </CheckBox>
-              <CheckBox>
-                <CheckText>Gds BF Oferta Disponibilidade</CheckText>
-              </CheckBox>
-            </CheckboxItem>
+            <LineCheckItem>
+              <CheckboxItem>
+                <Controller
+                  name="fullreservations"
+                  control={control}
+                  render={({ field }) => (
+                    <CheckBox onValueChange={field.onChange} id="c1" />
+                  )}
+                />
+                <CheckText htmlFor="c1">Reservas Consideradas Full</CheckText>
+              </CheckboxItem>
+              <CheckboxItem>
+                <Controller
+                  name="disponibility"
+                  control={control}
+                  render={({ field }) => (
+                    <CheckBox onValueChange={field.onChange} id="c2" />
+                  )}
+                />
+                <CheckText htmlFor="c2">
+                  Gds BF Oferta Disponibilidade
+                </CheckText>
+              </CheckboxItem>
+            </LineCheckItem>
           </CheckboxContainer>
         </LineFormItem>
         <LineFormItem>
           <LineMultiSelect>
-            <LabelText>RESERVAS CONSIDERADAS</LabelText>
-            <MultiSelect options={options} />
+            <LabelText htmlFor="rsvt">RESERVAS CONSIDERADAS</LabelText>
+            <Controller
+              name="reservations"
+              control={control}
+              render={({ field }) => (
+                <MultiSelect
+                  options={options}
+                  onChange={field.onChange}
+                  id="rsvt"
+                />
+              )}
+            />
           </LineMultiSelect>
         </LineFormItem>
         <LineFormItem>
           <CheckboxContainer>
             <LabelText>PROJEÇÕES EXTRAS</LabelText>
-            <CheckboxItem>
-              <CheckBox>
-                <CheckText>Projetar abastecimento BF</CheckText>
-              </CheckBox>
-              <CheckBox>
-                <CheckText>Projetar abastecimento BF</CheckText>
-              </CheckBox>
-            </CheckboxItem>
+            <LineCheckItem>
+              <CheckboxItem>
+                <Controller
+                  name="supply1"
+                  control={control}
+                  render={({ field }) => (
+                    <CheckBox onValueChange={field.onChange} id="c3" />
+                  )}
+                />
+                <CheckText htmlFor="c3">Projetar abastecimento BF</CheckText>
+              </CheckboxItem>
+              <CheckboxItem>
+                <Controller
+                  name="supply2"
+                  control={control}
+                  render={({ field }) => (
+                    <CheckBox onValueChange={field.onChange} id="c4" />
+                  )}
+                />
+                <CheckText htmlFor="c4">Projetar abastecimento BF</CheckText>
+              </CheckboxItem>
+            </LineCheckItem>
           </CheckboxContainer>
         </LineFormItem>
         <LineFormItem>
           <LineTextArea>
-            <LabelText>MÊS DE PROJEÇÃO</LabelText>
-            <MyTextarea></MyTextarea>
+            <LabelText htmlFor="teste">MÊS DE PROJEÇÃO</LabelText>
+            <Controller
+              name="projectionmonth"
+              control={control}
+              render={({ field }) => (
+                <MyTextarea onValueChange={field.onChange} id="teste" />
+              )}
+            />
           </LineTextArea>
         </LineFormItem>
         <Button css={{ alignSelf: 'end' }}>

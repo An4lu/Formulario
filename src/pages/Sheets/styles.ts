@@ -31,23 +31,29 @@ export const LineFormItem = styled('div', {
   marginTop: '40px',
 })
 
+export const LineCheckItem = styled('div', {
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  gap: '80px',
+})
+
 export const ItemFormContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-
   gap: '14px',
 })
 
 export const CheckboxContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  gap: '14px',
+  gap: '16px',
 })
 
 export const CheckboxItem = styled('div', {
   display: 'flex',
   flexDirection: 'row',
-  marginTop: '14px',
+  gap: '1px',
 })
 
 export const CheckText = styled('label', {

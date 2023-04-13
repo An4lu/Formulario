@@ -8,11 +8,12 @@ interface Option {
 }
 
 interface MultiSelectProps {
+  id: string
   options: Option[]
   onChange?: (selectedOptions: MultiValue<Option>) => void
 }
 
-export function MultiSelect({ options, onChange }: MultiSelectProps) {
+export function MultiSelect({ id, options, onChange }: MultiSelectProps) {
   const [selectedOptions, setSelectedOptions] = useState<MultiValue<Option>>([])
 
   const handleSelectChange = (newValue: MultiValue<Option>) => {
