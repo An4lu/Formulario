@@ -1,15 +1,21 @@
-import React, { useState } from 'react'
+import { HTMLAttributes } from 'react'
 import { TextArea } from './styles'
 
-const MyTextarea = () => {
-  const [text, setText] = useState('')
+interface MyTextareaProps extends HTMLAttributes<HTMLTextAreaElement> {
+  onValueChange: (value: string) => void
+}
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setText(event.target.value)
+const MyTextarea = (props: MyTextareaProps) => {
+  function handleChange(value: string) {
+    props.onValueChange(value)
   }
 
   return (
-    <TextArea rows={7} value={text} onChange={handleInputChange}></TextArea>
+    <TextArea
+      {...props}
+      rows={7}
+      onChange={(e) => handleChange(e.target.value)}
+    />
   )
 }
 
