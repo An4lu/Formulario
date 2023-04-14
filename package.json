@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.0.1",
     "@phosphor-icons/react": "^2.0.6",
     "@radix-ui/react-checkbox": "^1.0.3",
     "@rocketseat/eslint-config": "^1.2.0",
@@ -20,7 +21,8 @@
     "react-hook-form": "^7.43.9",
     "react-router-dom": "^6.10.0",
     "react-select": "^5.7.2",
-    "styled-components": "^5.3.9"
+    "styled-components": "^5.3.9",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@types/chroma-js": "^2.4.0",

@@ -6,6 +6,8 @@ import MyTextarea from '../../components/TextArea'
 import { Heading } from '../../components/Title'
 import { SubTitle } from '../../components/SubTitle'
 import { PlayCircle } from '@phosphor-icons/react'
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as zod from 'zod'
 import {
   CheckText,
   CheckboxContainer,
@@ -28,12 +30,29 @@ const options = [
   { label: 'BF', value: 'BF' },
 ]
 
+const formValidationSchema = zod.object({
+  monthSelect: zod.string().min(1, 'Selecione um mês de projeção'),
+  projectionmonth: zod.string().min(1, 'Preencha o campo de mês de projeção'),
+  target: zod.string().min(1, 'Selecione um target para reserva'),
+  diarization: zod.string().min(1, 'Selecione uma diarização'),
+  reservations: zod
+    .array(
+      zod.object({
+        value: zod.string(),
+        label: zod.string(),
+      }),
+    )
+    .min(1, 'Selecione uma Reserva'),
+  fullreservations: zod.boolean(),
+  disponibility: zod.boolean(),
+  supply1: zod.boolean(),
+  supply2: zod.boolean(),
+})
+type CreateSimulationData = zod.infer<typeof formValidationSchema>
+
 export const Sheets = () => {
-  const {
-    handleSubmit,
-    // formState: { errors },
-    control,
-  } = useForm({
+  const { handleSubmit, formState, control } = useForm<CreateSimulationData>({
+    resolver: zodResolver(formValidationSchema),
     defaultValues: {
       monthSelect: '',
       projectionmonth: '',
@@ -46,6 +65,8 @@ export const Sheets = () => {
       supply2: false,
     },
   })
+
+  console.log(formState.errors)
 
   const getValues = (data: any) => {
     console.log(data)
