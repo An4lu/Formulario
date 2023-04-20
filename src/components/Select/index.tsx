@@ -16,7 +16,7 @@ export function Select(props: SelectProps) {
     },
   ]
 
-  function handleChange(dados) {
+  function handleChange(dados: any) {
     props.onValueChange(dados.value)
   }
 
@@ -24,7 +24,6 @@ export function Select(props: SelectProps) {
     <ReactSelect
       onChange={handleChange}
       options={selectOptions}
-      isClearable
       styles={colorStyles}
       placeholder="Selecione"
       id={props.id}

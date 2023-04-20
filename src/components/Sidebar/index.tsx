@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import {
   House,
-  Layout,
   MicrosoftExcelLogo,
   CaretLeft,
+  ArrowsCounterClockwise,
+  ChartLineUp,
 } from '@phosphor-icons/react'
 
 import {
@@ -47,15 +48,21 @@ export const Sidebar = () => {
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to="/Nothing" collapsed={isCollapsed}>
-            <Layout size={22} />
-            {!isCollapsed && <span>Dashboard</span>}
-          </StyledNavLink>
-        </li>
-        <li>
           <StyledNavLink to="/Sheets" collapsed={isCollapsed}>
             <MicrosoftExcelLogo size={22} />
             {!isCollapsed && <span>Sheets</span>}
+          </StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink to="/Simulations" collapsed={isCollapsed}>
+            <ArrowsCounterClockwise size={22} />
+            {!isCollapsed && <span>Simulação</span>}
+          </StyledNavLink>
+        </li>
+        <li>
+          <StyledNavLink to="/Results" collapsed={isCollapsed}>
+            <ChartLineUp size={22} />
+            {!isCollapsed && <span>Resultados</span>}
           </StyledNavLink>
         </li>
       </NavList>

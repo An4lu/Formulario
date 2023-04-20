@@ -23,7 +23,7 @@ import { Heading } from '../../components/Title'
 export function Home() {
   return (
     <StyledFlex>
-      <Heading>Abastecimento Inteligente - ABI</Heading>
+      <Heading>Stock Light Year</Heading>
       <SubTitle>
         <Text>
           O projeto tem como objetivo criar um modelo de dados para a análise do
