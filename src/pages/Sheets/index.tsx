@@ -24,6 +24,7 @@ import {
   SelectItem,
 } from './styles'
 import { Controller, useForm } from 'react-hook-form'
+import { Text } from '../../components/Text'
 
 const options = [
   { label: 'D2C', value: 'D2C' },
@@ -77,7 +78,9 @@ export const Sheets = () => {
       <Header>
         <Heading>Stock Light Year</Heading>
         <SubTitle>
-          Aqui você irá parametrizar dados para o cálculo de reserva.
+          <Text css={{ marginTop: '-15px', marginBottom: '0px' }}>
+            Aqui você irá parametrizar dados para o cálculo de reserva.
+          </Text>
         </SubTitle>
       </Header>
 

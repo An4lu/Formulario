@@ -1,7 +1,8 @@
 import { styled } from '../../styles'
 
 export const StyledSubTitle = styled('h4', {
-  color: '$gray250',
+  color: '$gray550',
   fontSize: '16px',
-  fontWeight: '500',
+  fontWeight: '700',
+  marginTop: '13px',
 })

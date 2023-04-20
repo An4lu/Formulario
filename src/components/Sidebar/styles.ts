@@ -1,4 +1,5 @@
 import { styled } from '../../styles'
+import { NavLink } from 'react-router-dom'
 
 export const ContainerSidebar = styled('div', {
   display: 'flex',
@@ -115,11 +116,12 @@ export const NavList = styled('ul', {
   gap: '10px',
 })
 
-export const NavLink = styled('a', {
+export const StyledNavLink = styled(NavLink, {
   display: 'flex',
   alignItems: 'center',
   gap: '12px',
   color: '$gray300',
+  textDecoration: 'none',
   cursor: 'pointer',
   '&:hover': {
     backgroundColor: '$blue100',

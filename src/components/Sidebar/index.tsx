@@ -14,7 +14,7 @@ import {
   Title,
   LogoContainer,
   NavList,
-  NavLink,
+  StyledNavLink,
 } from './styles'
 
 import logo from '../../assets/img/wp.svg'
@@ -41,22 +41,22 @@ export const Sidebar = () => {
       </SubHeader>
       <NavList>
         <li>
-          <NavLink collapsed={isCollapsed}>
+          <StyledNavLink to="/Home" collapsed={isCollapsed}>
             <House size={22} />
             {!isCollapsed && <span>Home</span>}
-          </NavLink>
+          </StyledNavLink>
         </li>
         <li>
-          <NavLink collapsed={isCollapsed}>
+          <StyledNavLink to="/" collapsed={isCollapsed}>
             <Layout size={22} />
             {!isCollapsed && <span>Dashboard</span>}
-          </NavLink>
+          </StyledNavLink>
         </li>
         <li>
-          <NavLink collapsed={isCollapsed}>
+          <StyledNavLink to="/Sheets" collapsed={isCollapsed}>
             <MicrosoftExcelLogo size={22} />
             {!isCollapsed && <span>Sheets</span>}
-          </NavLink>
+          </StyledNavLink>
         </li>
       </NavList>
     </ContainerSidebar>
