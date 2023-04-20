@@ -41,13 +41,13 @@ export const Sidebar = () => {
       </SubHeader>
       <NavList>
         <li>
-          <StyledNavLink to="/Home" collapsed={isCollapsed}>
+          <StyledNavLink to="/" collapsed={isCollapsed}>
             <House size={22} />
             {!isCollapsed && <span>Home</span>}
           </StyledNavLink>
         </li>
         <li>
-          <StyledNavLink to="/" collapsed={isCollapsed}>
+          <StyledNavLink to="/Nothing" collapsed={isCollapsed}>
             <Layout size={22} />
             {!isCollapsed && <span>Dashboard</span>}
           </StyledNavLink>

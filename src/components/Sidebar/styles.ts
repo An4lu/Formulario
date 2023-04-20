@@ -121,12 +121,17 @@ export const StyledNavLink = styled(NavLink, {
   alignItems: 'center',
   gap: '12px',
   color: '$gray300',
-  textDecoration: 'none',
   cursor: 'pointer',
+  textDecoration: 'none',
   '&:hover': {
     backgroundColor: '$blue100',
     color: '$blue50',
-    borderRight: '5px solid $blue50',
+  },
+  '&.active': {
+    backgroundColor: '$blue100',
+    color: '$blue50',
+    border: 'none',
+    borderRadius: '4px',
   },
   variants: {
     collapsed: {
@@ -139,6 +144,9 @@ export const StyledNavLink = styled(NavLink, {
       },
       false: {
         padding: '10px 0 10px 24px',
+        '&.active': {
+          borderRight: '5px solid $blue50',
+        },
       },
     },
   },
