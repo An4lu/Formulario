@@ -1,14 +1,40 @@
 import { styled } from '../../styles'
 
-export const StyledFlex = styled('div', {
+export const Container = styled('div', {
+  display: 'flex',
+  justifyContent: 'start',
+  alignItems: 'start',
+  flexDirection: 'column',
+  gap: '1rem',
   maxWidth: '1000px',
-  width: '100%',
   margin: '0 auto',
-  marginTop: '42px',
+  marginTop: '-8px',
 })
 
-export const TitleFlexConteiner = styled('div', {
+export const ItemFormConteiner = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  gap: '24px',
+  gap: '14px',
+})
+
+export const LineFormConteiner = styled('div', {
+  display: 'flex',
+  width: '100%',
+  justifyContent: 'space-between',
+  marginTop: '50px',
+  gap: '4.325rem',
+})
+
+export const TitleFormConteiner = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+})
+
+export const GridConteiner = styled('div', {
+  display: 'flex',
+  flexWrap: 'wrap',
+  width: '100%',
+  justifyContent: 'space-between',
+  marginTop: '50px',
+  gap: '4.325rem',
 })

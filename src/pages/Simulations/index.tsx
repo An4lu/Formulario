@@ -2,10 +2,14 @@ import { Button } from '../../components/Button'
 import { CheckBox } from '../../components/Checkbox'
 import { MultiSelect } from '../../components/MultiSelect'
 import { Select } from '../../components/Select'
-import MyTextarea from '../../components/TextArea'
 import { Heading } from '../../components/Title'
 import { SubTitle } from '../../components/SubTitle'
-import { PlayCircle } from '@phosphor-icons/react'
+import {
+  DownloadSimple,
+  PlayCircle,
+  Question,
+  UploadSimple,
+} from '@phosphor-icons/react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
 import {
@@ -22,9 +26,12 @@ import {
   LineMultiSelect,
   LineTextArea,
   SelectItem,
+  FormLabelText,
+  LineFormButton,
 } from './styles'
 import { Controller, useForm } from 'react-hook-form'
 import { Text } from '../../components/Text'
+import { useState } from 'react'
 
 const options = [
   { label: 'D2C', value: 'D2C' },
@@ -52,6 +59,8 @@ const formValidationSchema = zod.object({
 type CreateSimulationData = zod.infer<typeof formValidationSchema>
 
 export const Simulations = () => {
+  const [showSecond, setShowSecond] = useState(false)
+  const [showMultiSelect, setshowMultiSelect] = useState(true)
   const { handleSubmit, formState, control } = useForm<CreateSimulationData>({
     resolver: zodResolver(formValidationSchema),
     defaultValues: {
@@ -76,10 +85,11 @@ export const Simulations = () => {
   return (
     <Container>
       <Header>
-        <Heading>Simulação</Heading>
+        <Heading>Outlook de Abastecimento da Reserva</Heading>
         <SubTitle>
           <Text css={{ marginTop: '-15px', marginBottom: '0px' }}>
-            Aqui você irá parametrizar dados para o cálculo de reserva.
+            Aqui você irá parametrizar dados para Outlook de abastecimento da
+            reserva.
           </Text>
         </SubTitle>
       </Header>
@@ -87,33 +97,54 @@ export const Simulations = () => {
       <FormContainer onSubmit={handleSubmit(getValues)}>
         <LineFormItem>
           <ItemFormContainer>
-            <LabelText htmlFor="select">MÊS DE PROJEÇÃO</LabelText>
+            <FormLabelText>
+              <LabelText htmlFor="select">MÊS DE PROJEÇÃO </LabelText>
+              <Question size={16} color="#999999" weight="bold" />
+            </FormLabelText>
             <SelectItem>
               <Controller
                 name="monthSelect"
                 control={control}
                 render={({ field }) => (
-                  <Select onValueChange={field.onChange} id="select" />
+                  <Select
+                    onValueChange={(value) => {
+                      field.onChange(value)
+                      if (value === 'valor-desejado') {
+                        setShowSecond(false)
+                      } else {
+                        setShowSecond(true)
+                      }
+                    }}
+                    id="select"
+                  />
                 )}
               />
             </SelectItem>
           </ItemFormContainer>
-          <ItemFormContainer>
-            <LabelText htmlFor="select1">TARGET PARA RESERVA</LabelText>
-            <SelectItem id="select1">
-              <Controller
-                name="target"
-                control={control}
-                render={({ field }) => (
-                  <Select onValueChange={field.onChange} id="select1" />
-                )}
-              />
-            </SelectItem>
-          </ItemFormContainer>
+          {showSecond && (
+            <ItemFormContainer>
+              <FormLabelText>
+                <LabelText htmlFor="select1">TARGET PARA RESERVA</LabelText>
+                <Question size={16} color="#999999" weight="bold" />
+              </FormLabelText>
+              <SelectItem id="select1">
+                <Controller
+                  name="target"
+                  control={control}
+                  render={({ field }) => (
+                    <Select onValueChange={field.onChange} id="select1" />
+                  )}
+                />
+              </SelectItem>
+            </ItemFormContainer>
+          )}
         </LineFormItem>
         <LineFormItem>
           <ItemFormContainer>
-            <LabelText htmlFor="select2">DIARIZAÇÃO</LabelText>
+            <FormLabelText>
+              <LabelText htmlFor="select2">DIARIZAÇÃO</LabelText>
+              <Question size={16} color="#999999" weight="bold" />
+            </FormLabelText>
             <SelectItem id="select2">
               <Controller
                 name="diarization"
@@ -134,7 +165,13 @@ export const Simulations = () => {
                   name="fullreservations"
                   control={control}
                   render={({ field }) => (
-                    <CheckBox onValueChange={field.onChange} id="c1" />
+                    <CheckBox
+                      onValueChange={(value) => {
+                        field.onChange(value)
+                        setshowMultiSelect(!value)
+                      }}
+                      id="c1"
+                    />
                   )}
                 />
                 <CheckText htmlFor="c1">Reservas Consideradas Full</CheckText>
@@ -151,29 +188,6 @@ export const Simulations = () => {
                   Gds BF Oferta Disponibilidade
                 </CheckText>
               </CheckboxItem>
-            </LineCheckItem>
-          </CheckboxContainer>
-        </LineFormItem>
-        <LineFormItem>
-          <LineMultiSelect>
-            <LabelText htmlFor="rsvt">RESERVAS CONSIDERADAS</LabelText>
-            <Controller
-              name="reservations"
-              control={control}
-              render={({ field }) => (
-                <MultiSelect
-                  options={options}
-                  onChange={field.onChange}
-                  id="rsvt"
-                />
-              )}
-            />
-          </LineMultiSelect>
-        </LineFormItem>
-        <LineFormItem>
-          <CheckboxContainer>
-            <LabelText>PROJEÇÕES EXTRAS</LabelText>
-            <LineCheckItem>
               <CheckboxItem>
                 <Controller
                   name="supply1"
@@ -184,32 +198,45 @@ export const Simulations = () => {
                 />
                 <CheckText htmlFor="c3">Projetar abastecimento BF</CheckText>
               </CheckboxItem>
-              <CheckboxItem>
-                <Controller
-                  name="supply2"
-                  control={control}
-                  render={({ field }) => (
-                    <CheckBox onValueChange={field.onChange} id="c4" />
-                  )}
-                />
-                <CheckText htmlFor="c4">Projetar abastecimento BF</CheckText>
-              </CheckboxItem>
             </LineCheckItem>
           </CheckboxContainer>
         </LineFormItem>
+        {showMultiSelect && (
+          <LineFormItem>
+            <LineMultiSelect>
+              <LabelText htmlFor="rsvt">RESERVAS CONSIDERADAS</LabelText>
+              <Controller
+                name="reservations"
+                control={control}
+                render={({ field }) => (
+                  <MultiSelect
+                    options={options}
+                    onChange={field.onChange}
+                    id="rsvt"
+                  />
+                )}
+              />
+            </LineMultiSelect>
+          </LineFormItem>
+        )}
         <LineFormItem>
           <LineTextArea>
-            <LabelText htmlFor="teste">MÊS DE PROJEÇÃO</LabelText>
-            <Controller
-              name="projectionmonth"
-              control={control}
-              render={({ field }) => (
-                <MyTextarea onValueChange={field.onChange} id="teste" />
-              )}
-            />
+            <LabelText htmlFor="teste">
+              FORÇAR ABASTECIMENTO IMEDIATO (GD-SKU)
+            </LabelText>
+            <LineFormButton>
+              <Button css={{ width: '135px' }}>
+                Download
+                <DownloadSimple size={22} weight="bold" />
+              </Button>
+              <Button css={{}}>
+                Upload
+                <UploadSimple size={22} weight="bold" />
+              </Button>
+            </LineFormButton>
           </LineTextArea>
         </LineFormItem>
-        <Button css={{ alignSelf: 'end' }}>
+        <Button css={{ alignSelf: 'end', marginTop: '-5px' }}>
           <PlayCircle size={22} weight="bold" />
           Executar
         </Button>

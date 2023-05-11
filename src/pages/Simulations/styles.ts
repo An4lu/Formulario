@@ -33,15 +33,21 @@ export const LineFormItem = styled('div', {
 
 export const LineCheckItem = styled('div', {
   display: 'flex',
-  flexDirection: 'row',
+  flexDirection: 'column',
   justifyContent: 'space-between',
-  gap: '80px',
+  gap: '12px',
 })
 
 export const ItemFormContainer = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   gap: '14px',
+})
+
+export const FormLabelText = styled('div', {
+  display: 'flex',
+  flexDirection: 'row',
+  gap: '2px',
 })
 
 export const CheckboxContainer = styled('div', {
@@ -82,5 +88,11 @@ export const SelectItem = styled('div', {
 export const LineTextArea = styled('div', {
   display: 'flex',
   flexDirection: 'column',
-  width: '100%',
+})
+
+export const LineFormButton = styled('div', {
+  display: 'flex',
+  flexDirection: 'row',
+  gap: '1rem',
+  marginTop: '-18px',
 })
